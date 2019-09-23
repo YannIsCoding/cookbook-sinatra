@@ -1,0 +1,17 @@
+<h1>Select from the web</h1>
+<% @result.each_with_index do |recipe, index| %>
+<p> <%= index + 1 %> --
+  <%=  recipe %>
+</p>
+<% end %>
+
+<form action="/add_recipe" method="post">
+  <div>
+    <label for="index">index:</label>
+    <input type="text" id="index" name="index">
+  </div>
+  <input name="url" type="hidden" value="<%= @url %>">
+  <div class="button">
+    <button type="submit">select index you want to add</button>
+  </div>
+</form>

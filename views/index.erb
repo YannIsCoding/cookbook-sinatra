@@ -1,0 +1,16 @@
+<p>
+  I'm in a <em>view</em>!
+</p>
+<ul>
+  <% @recipes.each_with_index do |recipe, index| %>
+    <% mark = recipe.done ? '[X]' : '[_]' %>
+    <li>
+      <%= index %>
+
+      <p> <%= mark %> <%= recipe.name %> -- <%= recipe.description %> -- <a href="/update/<%= index %> "> mark as done</a>
+        -- <a href="/destroy/<%= index %>">DESTROY</a>
+      </p>
+    </li>
+  <% end %>
+</ul>
+ <a href="/new">'Create a new recipe, baby!'</a>
